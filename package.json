@@ -4,13 +4,19 @@
   "description": "HTTP Response Tester",
   "repository": "stevenaw/zerxes",
   "license": "MIT",
-  "scripts": { },
-  "tags": [ ],
+  "scripts": {},
+  "tags": [],
+  "main": "./src/cli.js",
   "author": {
     "name": "Steven Weerdenburg"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
-  "dependencies": { }
+  "dependencies": {
+    "cross-fetch": "^2.2.2",
+    "uri-js": "^4.2.2",
+    "xlsx": "^0.13.3",
+    "yargs": "^12.0.2"
+  }
 }
