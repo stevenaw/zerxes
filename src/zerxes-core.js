@@ -1,5 +1,5 @@
 const fetch = require('cross-fetch');
-const URI = require("uri-js");
+const compareUrls = require('compare-urls');
 
 const verifyRedirectInternal = ({ url, expectedRedirect, hopCount, maxHops }) => {
   if (hopCount >= maxHops) {
@@ -18,7 +18,7 @@ const verifyRedirectInternal = ({ url, expectedRedirect, hopCount, maxHops }) =>
     if (res.status >= 300 && res.status < 400) {
       const resultUrl = res.headers.get('location');
 
-      if (resultUrl === expectedRedirect) {
+      if (compareUrls(resultUrl, expectedRedirect)) {
         return Promise.resolve({ hopCount });
       } else {
         return verifyRedirectInternal({
@@ -36,12 +36,9 @@ const verifyRedirectInternal = ({ url, expectedRedirect, hopCount, maxHops }) =>
 
 class ZerxesCore {
   verifyRedirect({ url, expectedRedirect, maxHops }) {
-    const normalizedUri = URI.normalize(url);
-    const normalizedRedirect = URI.normalize(expectedRedirect);
-
     return verifyRedirectInternal({
-      url: normalizedUri,
-      expectedRedirect: normalizedRedirect,
+      url: url,
+      expectedRedirect: expectedRedirect,
       hopCount: 0,
       maxHops: maxHops || 10
     });

@@ -12,15 +12,12 @@ module.exports = options => {
   const outputFile = options.out;
   const globalCliParams = {
     maxHops: parseInt(options.maxHops, 10) || undefined
-  }
+  };
 
   const zerxes = new ZerxesCore();
   const loaders = new Loaders();
-  const reporters = new Reporters();
 
   const loader = loaders.getLoader(inputFile);
-  const reporter = reporters.getReporter(outputFile);
-
   const loadedTestCases = loader.loadFile(inputFile);
   const testCases = loadedTestCases.map(testCase => 
     utils.mergeShallowOmitUndefined(globalDefaults, globalCliParams, testCase ));
@@ -31,7 +28,9 @@ module.exports = options => {
         found => found.hopCount,
         rejected => 0
       ).catch(err => {
-        console.log(err);
+        if (options.err) {
+          options.err(err);
+        }
         return 0;
       })
       .then(hopCount => Object.assign(
@@ -45,7 +44,10 @@ module.exports = options => {
   );
 
   return Promise.all(hopsToDestination).then(results => {
-    console.log(results);
+    const reporters = new Reporters();
+    const reporter = reporters.getReporter(outputFile);
     reporter.writeReport(outputFile, results);
+
+    return results;
   });
 };

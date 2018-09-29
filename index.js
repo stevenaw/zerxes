@@ -1,4 +1,4 @@
-const zerxesCli = require('./src/cli');
+const zerxes = require('./src/zerxes');
 const argv = require('yargs')
   .option('in', {
     describe: 'input file'
@@ -13,4 +13,10 @@ const argv = require('yargs')
   .help()
   .argv;
 
-zerxesCli(argv);
+zerxes(Object.assign(
+  {},
+  argv,
+  {
+    err: console.log,
+  }
+)).then(console.log);
