@@ -34,7 +34,7 @@ const verifyRedirectInternal = ({ url, expectedRedirect, hopCount, maxHops }) =>
   });
 };
 
-class Zerxes {
+class ZerxesCore {
   verifyRedirect({ url, expectedRedirect, maxHops }) {
     const normalizedUri = URI.normalize(url);
     const normalizedRedirect = URI.normalize(expectedRedirect);
@@ -48,4 +48,4 @@ class Zerxes {
   }
 };
 
-module.exports = Zerxes;
+module.exports = ZerxesCore;

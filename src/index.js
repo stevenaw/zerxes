@@ -1,3 +1,3 @@
-const Zerxes = require('./zerxes');
+const Zerxes = require('./zerxes-core');
 
 module.exports = Zerxes;
