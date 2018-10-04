@@ -6,12 +6,15 @@
   "license": "MIT",
   "scripts": {},
   "tags": [],
-  "main": "./index.js",
+  "main": "index.js",
   "author": {
     "name": "Steven Weerdenburg"
   },
   "engines": {
     "node": ">=6"
+  },
+  "bin": {
+    "zerxes": "index.js"
   },
   "dependencies": {
     "compare-urls": "^2.0.0",
