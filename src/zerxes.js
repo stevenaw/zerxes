@@ -10,6 +10,7 @@ const globalDefaults = {
 module.exports = options => {
   const inputFile = options.in;
   const outputFile = options.out;
+  const testCaseComplete = options.testCaseComplete;
   const globalCliParams = {
     maxHops: parseInt(options.maxHops, 10) || undefined
   };
@@ -33,14 +34,20 @@ module.exports = options => {
         }
         return 0;
       })
-      .then(hopCount => Object.assign(
-        {},
-        testCase,
-        {
-          success: !!hopCount,
-          hops: hopCount || 0
+      .then(hopCount => {
+        if (testCaseComplete) {
+          testCaseComplete(testCase.url, !!hopCount);
         }
-      ))
+
+        return Object.assign(
+          {},
+          testCase,
+          {
+            success: !!hopCount,
+            hops: hopCount || 0
+          }
+        )
+      })
   );
 
   return Promise.all(hopsToDestination).then(results => {

@@ -2,15 +2,19 @@
 const zerxes = require('./src/zerxes');
 const argv = require('yargs')
   .option('in', {
-    describe: 'input file'
+    describe: 'input file',
+    type: 'string',
+    demandOption: true
   })
   .option('out', {
-    describe: 'output file'
+    describe: 'output file',
+    type: 'string',
+    demandOption: true
   })
   .option('maxHops', {
-    describe: 'maximum valid redirect hop count'
+    describe: 'maximum valid redirect hop count',
+    type: 'number'
   })
-  .demandOption(['in', 'out'], 'Please provide both in and out arguments to work with this tool')
   .help()
   .argv;
 
@@ -19,5 +23,6 @@ zerxes(Object.assign(
   argv,
   {
     err: console.log,
+    testCaseComplete: (url, success) => console.log(`${!!success ? 'PASS' : 'FAIL'} ${url}`)
   }
 )).then(console.log);

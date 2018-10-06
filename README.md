@@ -67,5 +67,9 @@ Zerxes currently currently only supports CSV and XLSX files for output. Both for
 
 Call from CLI:
 ```cli
+npx zerxes --in=./test/data/test.csv --out=./output.csv --maxHops=5
+```
+
+```cli
 node index.js --in=./test/data/test.csv --out=./output.csv --maxHops=5
 ```
