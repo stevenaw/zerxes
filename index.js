@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const zerxes = require('./src/zerxes');
 const argv = require('yargs')
   .option('in', {
