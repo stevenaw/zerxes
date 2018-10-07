@@ -14,11 +14,12 @@ $ npx @zerxes [args]
 
 You can specify options through the command line (CLI).
 
-| CLI       | Description                       | Default Value | Example                    |
-| --------- | --------------------------------- | ------------- |--------------------------- |
-| `in`      | Input file with valid test cases  | &nbsp;        | `--in=./test-cases.xlsx`   |
-| `out`     | Output file with test results     | &nbsp;        | `--out=./output.xlsx`      |
-| `maxHops` | Maximum HTTP hops before failure  | 10            | `--maxHops=10`             |
+| CLI           | Description                       | Default Value | Example                    |
+| ------------- | --------------------------------- | ------------- |--------------------------- |
+| `in`          | Input file with valid test cases  | &nbsp;        | `--in=./test-cases.xlsx`   |
+| `out`         | Output file with test results     | &nbsp;        | `--out=./output.xlsx`      |
+| `maxHops`     | Maximum HTTP hops before failure  | 10            | `--maxHops=10`             |
+| `concurrency` | Maximum concurrent tests          | 20            | `--concurrency=20`         |
 
 ## Input Formats
 

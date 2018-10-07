@@ -15,6 +15,10 @@ const argv = require('yargs')
     describe: 'maximum valid redirect hop count',
     type: 'number'
   })
+  .option('concurrency', {
+    describe: 'maximum concurrent tests',
+    type: 'number'
+  })
   .help()
   .argv;
 
