@@ -1,18 +1,17 @@
 {
   "name": "zerxes",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "HTTP Response Tester",
   "repository": "stevenaw/zerxes",
   "license": "MIT",
   "scripts": {},
-  "tags": [],
-  "main": "index.js",
   "tags": [
     "http",
     "redirect",
     "300",
     "automation"
   ],
+  "main": "index.js",
   "author": {
     "name": "Steven Weerdenburg"
   },
