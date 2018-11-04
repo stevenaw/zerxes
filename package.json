@@ -7,6 +7,12 @@
   "scripts": {},
   "tags": [],
   "main": "index.js",
+  "tags": [
+    "http",
+    "redirect",
+    "300",
+    "automation"
+  ],
   "author": {
     "name": "Steven Weerdenburg"
   },

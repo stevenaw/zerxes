@@ -74,3 +74,9 @@ npx zerxes --in=./test/data/test.csv --out=./output.csv --maxHops=5
 ```cli
 node index.js --in=./test/data/test.csv --out=./output.csv --maxHops=5
 ```
+
+Install globally and run:
+```cli
+npm i -g zerxes
+zerxes --in=./test/data/test.csv --out=./output.csv --maxHops=5
+```
