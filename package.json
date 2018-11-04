@@ -5,7 +5,7 @@
   "repository": "stevenaw/zerxes",
   "license": "MIT",
   "scripts": {},
-  "tags": [
+  "keywords": [
     "http",
     "redirect",
     "300",
