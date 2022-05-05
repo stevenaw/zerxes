@@ -1,5 +1,5 @@
-const path = require('path');
-const XlsxReporter = require('./xlsx');
+import path from 'path';
+import XlsxReporter from './xlsx.js';
 
 const xlsx = new XlsxReporter();
 const registry = {};
@@ -20,4 +20,4 @@ class Reporters {
   }
 }
 
-module.exports = Reporters;
+export default Reporters;

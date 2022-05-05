@@ -1,4 +1,4 @@
-const XLSX = require('xlsx');
+import XLSX from 'xlsx';
 
 class XlsxReporter {
   writeReport(fileName, output) {
@@ -11,4 +11,4 @@ class XlsxReporter {
   }
 }
 
-module.exports = XlsxReporter;
+export default XlsxReporter;

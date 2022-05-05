@@ -1,4 +1,4 @@
-const XLSX = require('xlsx');
+import XLSX from 'xlsx';
 
 class XlsxLoader {
   loadFile(filePath) {
@@ -23,4 +23,4 @@ class XlsxLoader {
   }
 }
 
-module.exports = XlsxLoader;
+export default XlsxLoader;

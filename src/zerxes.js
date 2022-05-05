@@ -1,14 +1,14 @@
-const PQueue = require('p-queue');
-const ZerxesCore = require('./zerxes-core');
-const Loaders = require('./loaders');
-const Reporters = require('./reporters');
-const utils = require('./utils');
+import PQueue from 'p-queue';
+import ZerxesCore from './zerxes-core.js';
+import Loaders from './loaders/index.js';
+import Reporters from './reporters/index.js';
+import { mergeShallowOmitUndefined } from './utils.js';
 
 const globalDefaults = {
   maxHops: 10
 };
 
-module.exports = options => {
+export default function zerxes(options) {
   const inputFile = options.in;
   const outputFile = options.out;
   const testCaseComplete = options.testCaseComplete;
@@ -24,7 +24,7 @@ module.exports = options => {
   const loader = loaders.getLoader(inputFile);
   const loadedTestCases = loader.loadFile(inputFile);
   const testCases = loadedTestCases.map(testCase => 
-    utils.mergeShallowOmitUndefined(globalDefaults, globalCliParams, testCase ));
+    mergeShallowOmitUndefined(globalDefaults, globalCliParams, testCase ));
 
   const promiseFactory = testCases.map((testCase, i) =>
     () => zerxes.verifyRedirect(testCase)

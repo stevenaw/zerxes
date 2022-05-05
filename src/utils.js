@@ -1,4 +1,4 @@
-const mergeShallowOmitUndefined = (...args) => {
+export function mergeShallowOmitUndefined (...args) {
   const result = {};
 
   for (let i = 0; i < args.length; i++) {
@@ -11,5 +11,3 @@ const mergeShallowOmitUndefined = (...args) => {
 
   return result;
 };
-
-module.exports = { mergeShallowOmitUndefined };

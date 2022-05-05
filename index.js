@@ -1,6 +1,8 @@
 #!/usr/bin/env node
-const zerxes = require('./src/zerxes');
-const argv = require('yargs')
+import zerxes from './src/zerxes.js';
+import yargs from 'yargs';
+
+const argv = yargs
   .option('in', {
     describe: 'input file',
     type: 'string',
@@ -22,7 +24,7 @@ const argv = require('yargs')
   .help()
   .argv;
 
-zerxes(Object.assign(
+await zerxes(Object.assign(
   {},
   argv,
   {

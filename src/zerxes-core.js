@@ -1,5 +1,5 @@
-const fetch = require('cross-fetch');
-const compareUrls = require('compare-urls');
+import fetch from 'cross-fetch';
+import compareUrls from 'compare-urls';
 
 const verifyRedirectInternal = ({ url, expectedRedirect, hopCount, maxHops }) => {
   if (hopCount >= maxHops) {
@@ -45,4 +45,4 @@ class ZerxesCore {
   }
 };
 
-module.exports = ZerxesCore;
+export default ZerxesCore;

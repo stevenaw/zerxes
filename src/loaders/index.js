@@ -1,5 +1,5 @@
-const path = require('path');
-const XlsxLoader = require('./xlsx');
+import path from 'path';
+import XlsxLoader from './xlsx.js';
 
 const xlsx = new XlsxLoader();
 const registry = {};
@@ -20,4 +20,4 @@ class Loaders {
   }
 }
 
-module.exports = Loaders;
+export default Loaders;
