@@ -2,7 +2,7 @@
 import zerxes from './src/zerxes.js';
 import yargs from 'yargs';
 
-const argv = yargs
+const argv = yargs(process.argv.slice(2))
   .option('in', {
     describe: 'input file',
     type: 'string',

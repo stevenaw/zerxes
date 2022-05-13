@@ -1,6 +1,6 @@
 {
   "name": "zerxes",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "description": "HTTP Response Tester",
   "repository": "stevenaw/zerxes",
   "license": "MIT",
@@ -17,7 +17,7 @@
     "name": "Steven Weerdenburg"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=14"
   },
   "bin": {
     "zerxes": "index.js"
